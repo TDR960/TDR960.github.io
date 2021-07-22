@@ -1,0 +1,14 @@
+html {
+  background-color: #F0E68C;
+}
+p {
+  color: black;
+  font-size: 60px;
+  text-align: center;
+}
+
+li{
+	color: grey;
+	font-size: 30px;
+  text-align: center;
+}
