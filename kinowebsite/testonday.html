@@ -13,26 +13,30 @@
 
 <body>
   <center><div class="alert alert-secondary" role="alert">Название</div></center>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <video id="video" controls></video>
 
-  <center><video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="640"
-    height="264"
-    poster="MY_VIDEO_POSTER.jpg"
-    data-setup="{}"
-  >
-    <source src="https://magic.cloud.cdnland.in/movies/e734e520a3783ce2d688f43d586a4a2fa32389f8/6cd63e3fb2c7863877a27b9e025ebc4b:2021100820/720.mp4" type="video/mp4" type="video/mp4" />
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video></center>
+  <center><script>
+    if(Hls.isSupported())
+    {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('https://test.takedwn.ws/11_25_21/11/25/17/YKSY7BDR/Y4EG4T6B.mp4/master.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED,function()
+        {
+            video.play();
+        });
+    }
+    else if (video.canPlayType('application/vnd.apple.mpegurl'))
+    {
+        video.src = 'playlist.m3u8';
+        video.addEventListener('canplay',function()
+        {
+            video.play();
+        });
+    }
+    </script></center>
   <center><a href="https://tdr960.github.io/kinowebsite/Sitekino2.html"><button type="button" class="btn btn-secondary">Обратно</button></a>
   <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
 </body>
