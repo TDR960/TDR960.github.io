@@ -13,26 +13,29 @@
 
 <body>
   <center><div class="alert alert-secondary" role="alert">Ледяной драйв</div></center>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <video id="video" controls></video>
 
-  <center><video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="640"
-    height="264"
-    poster="MY_VIDEO_POSTER.jpg"
-    data-setup="{}"
-  >
-    <source src="http://nl100.cdnsqu.com/s/FXFSQ1jaFelhl2-mSNkmrB.te0FBQUFBQUFBQUFBQnNhS1RRUUJC/hd_90/The.Ice.Road.2021.D.iTunes.WEBDL.1080pp_720.mp4?vs4-origin" type="video/mp4" type="video/mp4" />
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video></center>
+  <center><script>
+    if(Hls.isSupported())
+    {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('https://test.takedwn.ws/07_02_21/07/02/21/KHES4MLB/TD44MPQV.mp4/master.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED,function()
+        {
+            video.play();
+        });
+    }
+    else if (video.canPlayType('application/vnd.apple.mpegurl'))
+    {
+        video.src = 'playlist.m3u8';
+        video.addEventListener('canplay',function()
+        {
+            video.play();
+        });
+    }
+    </script></center>
   <center><a href="https://tdr960.github.io/kinowebsite/Sitekino2.html"><button type="button" class="btn btn-secondary">Обратно</button></a>
-  <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
 </body>
