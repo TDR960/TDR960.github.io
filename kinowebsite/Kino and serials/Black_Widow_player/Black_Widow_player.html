@@ -13,26 +13,29 @@
 
 <body>
   <center><div class="alert alert-secondary" role="alert">Чёрная вдова перевели HDrezka Studio</div></center>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <video id="video" controls></video>
 
-  <center><video
-    id="my-video"
-    class="video-js"
-    controls
-    preload="auto"
-    width="640"
-    height="264"
-    poster="MY_VIDEO_POSTER.jpg"
-    data-setup="{}"
-  >
-    <source src="http://stream.voidboost.cc/7735e143a84cee587e32f82522eb9b26:2021072413:QVBMR3NNNmMxdnVlU0NVb1JrMEUzY25xR2EwTlBIaE1uUW1rUVQ3OW90d1RQUktUY1lHOEdqdVJnZEd3ekdIcG5KTlI1Y0V3eDJZYVQvK0lUa1NybXcvTEcvcklDd25iR0R6YzBLb0p2bW89/3/0/8/4/5/4/4zpw5.mp4" type="video/mp4" type="video/mp4" />
-    <p class="vjs-no-js">
-      To view this video please enable JavaScript, and consider upgrading to a
-      web browser that
-      <a href="https://videojs.com/html5-video-support/" target="_blank"
-        >supports HTML5 video</a
-      >
-    </p>
-  </video></center>
+  <center><script>
+    if(Hls.isSupported())
+    {
+        var video = document.getElementById('video');
+        var hls = new Hls();
+        hls.loadSource('https://test.takedwn.ws/12_24_21/12/24/18/6SRVTRB6/UUKJLWZI.mp4/master.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED,function()
+        {
+            video.play();
+        });
+    }
+    else if (video.canPlayType('application/vnd.apple.mpegurl'))
+    {
+        video.src = 'playlist.m3u8';
+        video.addEventListener('canplay',function()
+        {
+            video.play();
+        });
+    }
+    </script></center>
   <center><a href="https://tdr960.github.io/kinowebsite/Sitekino2.html"><button type="button" class="btn btn-secondary">Обратно</button></a>
-  <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
 </body>
