@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>Смотреть Чёрная вдова</title>
+  <title>Смотреть Веном 2</title>
     <style>
     body { background: url(mnm.jpg); }
   </style>
@@ -13,29 +13,12 @@
 
 <body>
   <center><div class="alert alert-secondary" role="alert">Веном 2</div></center>
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <video id="video" controls></video>
+  <script src="https://TDR960.github.io/kinowebsite/Pleers/playerjs.js" type="text/javascript"></script>
+  <div id="player"></div>
 
-  <center><script>
-    if(Hls.isSupported())
-    {
-        var video = document.getElementById('video');
-        var hls = new Hls();
-        hls.loadSource('https://test.takedwn.ws/11_25_21/11/25/17/YKSY7BDR/Y4EG4T6B.mp4/master.m3u8');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function()
-        {
-            video.play();
-        });
-    }
-    else if (video.canPlayType('application/vnd.apple.mpegurl'))
-    {
-        video.src = 'playlist.m3u8';
-        video.addEventListener('canplay',function()
-        {
-            video.play();
-        });
-    }
-    </script></center>
+  <script>
+    var player = new Playerjs({id:"player", file:"https://test.takedwn.ws/11_25_21/11/25/17/YKSY7BDR/Y4EG4T6B.mp4/master.m3u8"});
+  </script>
+  
   <center><a href="https://tdr960.github.io/kinowebsite/Sitekino2.html"><button type="button" class="btn btn-secondary">Обратно</button></a>
 </body>
