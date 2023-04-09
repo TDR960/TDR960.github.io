@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sans-serif', sans-serif;
+}
+
+body{
+    height: 100%;
+    background: url(img/1653041750_1-adonius-club-p-doktor-stoun-oboi-krasivie-3.jpg);
+}
+
+.header {
+    width: 1200px auto;
+    background: #2a7565;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+
+.play {
+    display:block;
+    width:750px;
+    height: 500px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+.btn {
+    background-color: #114d40;
+    border-radius: 8px;
+    height: 48px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+}
+
+.link {
+    text-decoration: none;
+}
