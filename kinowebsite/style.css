@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sans-serif', sans-serif;
+}
+
+.a1 {
+    width: 1920px auto;
+    height: 1022px auto;
+    display: flex;
+    background: #691c1c;
+    display: flex;
+    justify-content: center;
+    font-family: 'Sans-serif', sans-serif;
+    font-size: 50px;
+    color: #FFFFFF;
+}
+
+.container2 {
+    width: 1920px auto;
+    height: 1022px auto;
+    display: flex;
+    background: #4B4B4B;
+    display: flex;
+    justify-content: center;
+}
+
+.container3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1100px;
+    background-color: #4B4B4B;
+    margin-bottom: 110px;
+}
+
+.box {
+    background-color: #fff;
+    width: 46%;
+    height: 550px;
+    margin: 20px;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 700;
+    color: #332B66;
+    padding: 65px 60px;
+}
+
+.t1 {
+    font-weight: 700;
+	font-size: 32px;
+    color: #332B66;
+    box-sizing: border-box;
+    font-family: 'Sans-serif';
+}
+
+.t2 {
+    font-weight: 400;
+	font-size: 20px;
+}
+
+.Card {
+    width: 150px;
+    height: 200px;
+    display: flex
+}
+
+.box2 {
+    background-color: #fff;
+    width: 46%;
+    height: 550px;
+    margin: 20px;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 700;
+    color: #332B66;
+    padding: 65px 60px;
+}
+
+.box3 {
+    background-color: #fff;
+    width: 46%;
+    height: 550px;
+    margin: 20px;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 700;
+    color: #332B66;
+    padding: 65px 60px;
+}
+
+.box4 {
+    background-color: #fff;
+    width: 46%;
+    height: 550px;
+    margin: 20px;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 700;
+    color: #332B66;
+    padding: 65px 60px;
+}
+
+.btn {
+    background-color: #114d40;
+    border-radius: 8px;
+    width: 90px;
+    height: 28px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+}
