@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <title>Мой сайт</title>
+
+</head>
+
+<body>
+    <header class="header">
+     <div class="header_logo">
+        <div><img src="logo.svg" alt="лого"></div>
+        <div>
+            <h2>WebGenius</h2>
+        </div>
+      </div>
+      <a onclick="changeColor('Green')" class="change_color">Изменить фон</a>
+    </header>
+
+    <nav class="nav">
+        <a href="#" class="nav_item">Главная</a>
+        <a href="#" class="nav_item">О нас</a>
+        <a href="#" class="nav_item">Плюсы</a>
+        <a href="#" class="nav_item">Основы</a>
+        <a href="#" class="nav_item" onclick="openModal()">Контакты</a>
+        <a href="#" class="nav_item">Блог</a>
+    </nav>
+
+    <!-- модальное окно -->
+    <div id="myModal" class="modal">
+    <!-- Модальное содержание -->
+    <div class="modal-content">
+    <!-- Заголовок -->
+    
+    <div class="modal-header">
+    
+    <!-- Крестик для закрывания окна -->
+    <span class="close">&times;</span>
+    <!-- Текст заголовка -->
+    
+    <h2>Контакты</h2>
+    </div>
+    
+    <!-- Модальное основное содержимое -->
+    
+    <div class="modal-body">
+    <p>Для того, чтобы связаться с нами, вы можете написать нам на почту
+    или позвонить по телефону</p> <br>
+    <p>Телефон</p>
+    <a href="tel:+7999556573">+7999556573</a> <br>
+    <br>
+    <p>E-mail</p>
+    <a href="mailto:admil@maili.ru">Написать: admin@maili.ru</a>
+    </div>
+    </div>
+    </div>
+
+    <main>
+        <article class="block1">
+            <div><img src="picture1.png" alt="компьютер"></div>
+            <div class="block1_text">
+                <h1>Добро пожаловать на сайт, посвященный веб-разработке!</h1>
+                <p>Что такое веб-разработка, спросите вы? Проще говоря, это процесс создания веб-сайтов и веб-приложений
+                    с использованием таких языков программирования, как HTML, CSS и JavaScript.
+
+                    Что входит в веб-разработку: </p>
+                <div class="list">
+                    <ol>
+                        <li>Фронтенд-разработка</li>
+                        <li>Бэкенд-разработка</li>
+                        <li>Веб-дизайн</li>
+                        <li>Создание веб-контента</li>
+                        <li>Веб-тестирование и отладка</li>
+                        <li>Веб-развертывание и обслуживание</li>
+                    </ol>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- Slider main container -->b
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/css.png" alt=""></div>
+        <div class="swiper-slide"><img src="img/html.png" alt=""></div>
+        <div class="swiper-slide"><img src="img/JavaScript.png" alt=""></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+        </div>
+
+        <section>
+            <div class="feedback-form">
+                <div class="feedback-form_header">
+                    <h2>Хочешь получать полезные обучающие рассылки от нас?
+                        Нужно только заполнить форму!</h2>
+                </div>
+                <form action="#" id="feedback-form">
+                    <div class="feedback-form_content">
+                        <input type="text" class="input-box" placeholder="Имя" id="name">
+                        <input type="text" class="input-box" placeholder="E-mail" id="email">
+                        <input type="text" class="input-box" placeholder="Телефон" id="phone">
+                        <input type="submit" class="button" value="Отправить">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer_block">
+            <div class="footer_logo">
+                <img src="logo.svg" alt="лого">
+                <h2>WebGenius</h2>
+            </div>
+            <div class="footer_text">
+                <p>
+                    All rights reserved © 2023
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function changeColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        {
+            const form = document.getElementById('feedback-form');
+
+            form.addEventListener('submit', function(event){
+
+                const nameInput = document.getElementById('name');
+                const emailInput = document.getElementById('email');
+                const phoneInput = document.getElementById('phone');
+
+                if (nameInput.value === '' || emailInput.value === '' || phoneInput.value === '') {
+
+                    event.preventDefault();
+
+                    window.alert('Пожалуйста, заполните пустые поля формы!');
+
+                }
+            });
+        }
+
+        // код модального окна
+    function openModal() {
+    //находим элемент по id myModal
+    let modal = document.getElementById("myModal");
+    //находим первый элемент с классом close для
+    let span = document.getElementsByClassName("close")[0];
+    //делаем окно видимым при помощи css значения block свойства
+    //display, которое здаем модальному окну
+    modal.style.display = "block";
+    //навешиваем обработчик событий на элемент span
+    //при клике на который, модальное окно будет скрываться
+    //свойство display: none
+    span.onclick = function () {
+    modal.style.display = "none";
+    }
+    //создаем обработчик события, который реагирует на клик
+    //в окне браузера.
+    window.onclick = function (event) {
+    //если мы кликнули вне модального окна, но в окне браузера
+    //то белое модальное окно исчезает
+    //display:none
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+    }
+}
+
+    </script>
+
+    <script type="module">
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js'
+  
+    var swiper = new Swiper(".mySwiper", {
+    pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+    },
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    },
+
+    scorllbar: {
+        el: '.swiper-scrollbar'
+    }
+    });
+
+    </script>
+</body>
+
+</html>
