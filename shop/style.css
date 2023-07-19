@@ -1,0 +1,425 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    /* размер шрифта */
+    --font-size-13: 13px;
+    --font-size-16: 16px;
+    --font-size-20: 20px;
+    --font-size-24: 24px;
+    --font-size-55: 55px;
+    /* цвета */
+    --color-main: white;
+    --color-header-border: #F5F5F5;
+    --color-text-main: black;
+    --color-buttons: black;
+    --color-text-buttons: white;
+    --color-footer: black;
+    --color-footer-link: #757575;
+    /* жирность шрифта */
+    --font-weight-light: 400;
+    --font-weight-normal: 500;
+    /* сам шрифт */
+    --font-primary: 'Roboto', sans-serif;
+
+}
+
+body {
+    background-color: var(--color-main);
+    font-family: var(--font-primary);
+}
+
+.video-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3%;
+}
+
+.swiper {
+    width: 80%;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.swiper-slide {
+    background-size: cover;
+    background-position: center;
+}
+
+.mySwiper2 {
+    height: 300px;
+    width: 80%;
+}
+
+.mySwiper {
+    height: 20%;
+    box-sizing: border-box;
+    padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+    opacity: 1;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-body-product {
+    display: flex;
+    flex-direction: row;
+}
+
+.modal-slider {
+    width: 70%;
+}
+
+.modal-description {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.modal-description-header {
+    color: #050505;
+    font-size: 24px;
+
+}
+
+.modal-description-text {}
+
+/* блок хедера/шапки */
+.header_wrapper {
+    background-color: var(--color-header-border);
+    height: 164px;
+    box-shadow: inset 0px -1px 0px #E5E5E5;
+}
+
+/* верхняя серая полоса */
+.header_head {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1%;
+    padding-right: 2%;
+}
+
+.header_head a {
+    text-decoration: none;
+    color: var(--color-text-main);
+}
+
+/* белая полоса с основным меню */
+.header_content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    min-height: 70px;
+    background-color: var(--color-main);
+    width: 100%;
+    z-index: 2;
+}
+
+/* меню */
+.header_menu {
+    display: flex;
+    gap: 15%;
+}
+
+.header_menu-item {
+    text-decoration: none;
+    color: var(--color-text-main);
+}
+
+/* иконки */
+.header_icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20%;
+    width: 10%;
+}
+
+.header_icons img {
+    width: 25px;
+    height: 25px;
+}
+
+/* стилизация корзины, и цифры*/
+.cart {
+    position: relative;
+}
+
+.cart-count {
+    background-color: var(--color-header-border);
+    border-radius: 50%;
+    color: var(--color-text-main);
+    font-size: var(--font-size-20);
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    position: absolute;
+    top: -10px;
+    left: 20px
+}
+
+/* обертка */
+.about {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 8%;
+    margin-bottom: 8%;
+    font-family: var(--font-primary);
+}
+
+/* заголовок */
+.about_h1 {
+    font-size: var(--font-size-55);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-main);
+}
+
+/* текст */
+.about_text {
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-20);
+    width: 70%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: var(--color-text-main);
+}
+
+/* кнопка */
+.button {
+    border-radius: 30px;
+    padding: 8px 30px;
+    color: var(--color-main);
+    font-size: var(--font-size-16);
+    font-weight: var(--font-weight-light);
+    background-color: var(--color-buttons);
+    text-decoration: none;
+}
+
+
+.products {
+    margin: 48px;
+}
+
+/* заголовок раздела */
+.products_h2 {
+    font-size: var(--font-size-24);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-text-main);
+    margin-bottom: 20px;
+}
+
+
+/* обертка флекс элементов */
+.products_items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product {
+    margin: 12px;
+}
+
+.product img {
+    max-width: 100%;
+}
+
+/* описание товара, весь блок */
+.product_description {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    color: var(--color-text-main);
+}
+
+/* название товара */
+.product_name {
+    font-weight: var(--font-weight-light);
+}
+
+/* стоимость товара */
+.product_price {
+    font-weight: var(--font-weight-normal);
+    margin-top: 5px;
+}
+
+
+/* основной блок с темным фоном */
+.footer {
+    background-color: var(--color-footer);
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_content {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.footer_menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+/* колонка меню */
+.footer_menu-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer_menu-column a {
+    color: var(--color-footer-link);
+    text-decoration: none;
+}
+
+.footer_menu-column :nth-child(1) {
+    color: var(--color-main);
+}
+
+/* надпись о правах */
+.footer_about {
+    color: var(--color-footer-link);
+}
+
+.footer_menu-icons a {
+    margin-left: 15px;
+}
+
+
+/* Модальный (затемненный фон) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 4;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Модальное содержание (белое окно)*/
+.modal-content {
+    position: relative;
+    background-color: var(--color-main);
+    margin: auto;
+    padding: 0;
+    border: 1px solid 888;
+    width: 50%;
+    height: auto;
+    padding-bottom: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Кнопка закрытия */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+/* смена цвета крестика при наведении на него */
+.close:hover,
+.close:focus {
+    color: #ff0202;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* заголовок модального окна */
+.modal-header {
+    padding: 15px 16px;
+    margin: 0 auto;
+    width: 90%;
+    height: 70px;
+
+}
+
+.modal-header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* ширина и отступы для содержимого окна */
+.modal-body {
+    width: 85%;
+    margin: 15px auto;
+}
+
+.feedback-form_content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+.input-box {
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    height: 40px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.feedback-form_content div {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.feedback-form_content div a {
+    color: var(--color-text-main);
+}
+
+/* выравниваем сам блок со слайдером */
+.carousel {
+    background: var(--color-main);
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* отступ между слайдами */
+.carousel-cell {
+    margin-right: 2%;
+    counter-increment: carousel-cell;
+}

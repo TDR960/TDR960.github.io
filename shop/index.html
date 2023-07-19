@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Интернет-магазин</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+
+</head>
+
+<body>
+    <header class="header_wrapper">
+
+        <div class="header_head">
+            <a href="">Помощь</a>
+            <span>|</span>
+            <a onclick="openModal()">Войти</a>
+        </div>
+        <div class="header_content" id="myHeader">
+
+            <a href="" class="header_logo">
+                <img src="/logo.svg" alt="лого">
+            </a>
+            <nav class="header_menu">
+                <a href="#part1" class="header_menu-item">Новинки</a>
+                <a href="#part2" class="header_menu-item">Мужчины</a>
+                <a href="#" class="header_menu-item">Женщины</a>
+                <a href="#" class="header_menu-item">Дети</a>
+            </nav>
+            <div class="header_icons">
+                <a href=""><img src="/search.svg" alt="поиск"></a>
+                <a href=""><img src="/heart.svg" alt="избранное"></a>
+
+                <div class="cart">
+                    <img src="/cart.svg" alt="корзина">
+                    <div class="cart-count">0</div>
+                </div>
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+        <section class="about">
+            <h1 class="about_h1">о нас</h1>
+            <p class="about_text">Добро пожаловать в Nike, где мы верим, что каждый является спортсменом. Мы стремимся
+                предоставить вам лучшую спортивную обувь, одежду и аксессуары, чтобы помочь вам показать свои лучшие
+                результаты и достичь своих целей. Наши продукты разработаны с использованием новейших технологий и
+                инновационных материалов.</p>
+            <a href="https://ru.wikipedia.org/wiki/Nike" class="button">Подробнее ></a>
+        </section>
+
+
+        <div class="carousel" data-flickity='{ "wrapAround": true, "autoPlay": true, "bgLazyLoad": 1   }'>
+            <div class="carousel-cell"><img src="/slider1.png" alt=""></div>
+            <div class="carousel-cell"><img src="/slider2.png" alt=""></div>
+            <div class="carousel-cell"><img src="/slider3.png" alt=""></div>
+            <div class="carousel-cell"><img src="/slider4.png" alt=""></div>
+            <div class="carousel-cell"><img src="/slider5.png" alt=""></div>
+        </div>
+
+
+
+        <section class="products" id="part1">
+            <h2 class="products_h2">Популярное на этой неделе</h2>
+
+            <div class="products_items">
+                <div class="product gallery">
+                    <a href="/shoes1.png"><img src="/shoes1.png" title="Nike Air Force 1 '07">
+
+                    </a>
+
+
+                    <a href="/shoes2.png" style="display: none;"><img src="/shoes2.png" alt=""></a>
+                    <div class="product_description">
+                        <div>
+                            <div class="product_name">Nike Air Force 1 '07</div>
+                            <div class="product_price">15 000 &#8381;</div>
+                        </div>
+                        <button href="" class="button add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/shoes2.png" alt="" onclick="openModalProduct()">
+                    <div class="product_description">
+                        <div>
+                            <div class="product_name">Nike Blazer Mid '77</div>
+                            <div class="product_price">15 000 &#8381;</div>
+                        </div>
+
+                        <button href="" class="button  add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/shoes3.png" alt="">
+                    <div class="product_description">
+                        <div>
+                            <div class="product_name">Air Jordan 1 Low</div>
+                            <div class="product_price">15 000 &#8381;</div>
+                        </div>
+                        <button class="button  add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/shoes4.png" alt="">
+                    <div class="product_description">
+                        <div>
+                            <div class="product_name">Nike Air Force 1 '07</div>
+                            <div class="product_price">15 000 &#8381;</div>
+                        </div>
+                        <button class="button  add-to-cart">В корзину</button>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/shoes5.png" alt="">
+                    <div class="product_description">
+                        <div>
+                            <div class="product_name">Nike Air Max SYSTM</div>
+                            <div class="product_price">15 000 &#8381;</div>
+                        </div>
+                        <button href="" class="button  add-to-cart">В корзину</a>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="/shoes6.png" alt="">
+                    <div class="product_description">
+                        <div>
+                            <div class="product_name">Nike Court Legacy</div>
+                            <div class="product_price">15 000 &#8381;</div>
+                        </div>
+                        <button class="button  add-to-cart">В корзину</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <div id="myModal" class="modal"> <!-- Модальное содержание -->
+            <div class="modal-content">
+                <!-- Заголовок -->
+                <div class="modal-header">
+                    <!-- Крестик для закрывания окна -->
+                    <span class="close" onclick="closeModal()">&times;</span> <!-- Текст заголовка -->
+
+                </div>
+                <div class="modal-header-logo">
+                    <img src="/logo.svg" alt="">
+                    <div>YOUR ACCOUNT FOR
+                        EVERYTHING NIKE</div>
+                </div>
+                <!-- Модальное основное содержимое -->
+                <div class="modal-body">
+                    <form action="#" id="feedback-form">
+
+                        <div class="feedback-form_content">
+
+                            <input type="text" class="input-box" placeholder="email" id="email">
+                            <input type="password" class="input-box" placeholder="password" id="phone">
+                            <div>Входя в систему, вы соглашаетесь с <a href="">Privacy Policy</a> и <a href="">Terms of
+                                    Use</a></div>
+                            <input type="submit" class="button" value="Отправить">
+                            <div>Еще не с нами? <a href="">Зарегистрироваться</a></div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="video-content">
+            <video id="my-video" class="video-js" controls preload="auto" width="" height="264"
+                poster="/nike-just-do-it.jpg" data-setup="{}">
+                <source src="/video.mp4" type="video/mp4" />
+                <p class="vjs-no-js">
+                    To view this video please enable JavaScript, and consider upgrading to a
+                    web browser that
+                    <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                </p>
+            </video>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer_content">
+
+            <div class="footer_menu">
+
+                <nav class="footer_menu-column">
+                    <a href="">O NIKE</a>
+                    <a href="">Новости</a>
+                    <a href="">Карьера</a>
+                    <a href="">Инвесторы</a>
+                </nav>
+
+                <div class="footer_menu-icons">
+                    <a href=""><img src="/twitter.svg" alt=""></a>
+                    <a href=""> <img src="/facebook.svg" alt=""></a>
+                    <a href=""><img src="/instagram.svg" alt=""></a>
+                    <a href=""><img src="/youtube.svg" alt=""></a>
+                </div>
+
+            </div>
+
+            <div class="footer_about">© 2023 Nike, Inc. All Rights Reserved</div>
+
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+</body>
+
+</html>
