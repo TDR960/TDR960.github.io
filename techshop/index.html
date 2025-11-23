@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Tech Shop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: #1e88e5;
+            color: #fff;
+            padding: 16px 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .top-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 16px;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 32px 0 40px;
+        }
+
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .hero-text {
+            flex: 1 1 280px;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        .hero-subtitle {
+            margin-top: 0;
+            margin-bottom: 20px;
+            max-width: 420px;
+        }
+
+        .hero-img {
+            flex: 1 1 260px;
+            text-align: center;
+        }
+
+        .hero-img img {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            background: #1e88e5;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:focus {
+            opacity: 0.9;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 18px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        #contact form {
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 480px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+        }
+
+        .form-row {
+            margin-bottom: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-note {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #263238;
+            color: #fff;
+            text-align: center;
+            padding: 16px 0;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 12px 0;
+            }
+
+            .hero-title {
+                font-size: 24px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="top-row">
+            <div class="logo">Tech Shop</div>
+            <nav>
+                <a href="#home">Головна</a>
+                <a href="#services">Послуги</a>
+                <!-- BUG #1: посилання "Контакти" веде НЕ до блоку contact -->
+                <a href="#services">Контакти</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<main id="home">
+    <div class="container">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-text">
+                <h1 id="hero-title" class="hero-title">Магазин високотехнологічних товарів</h1>
+                <p class="hero-subtitle">
+                    Продуктивність, надійність і швидкість — техніка, що працює так, як потрібно саме тобі.
+                </p>
+                <button class="btn-primary" type="button" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'});">
+                    Подивитися послуги
+                </button>
+            </div>
+            <div class="hero-img">
+                <img src="https://via.placeholder.com/420x260?text=Demo+Image" alt="Демо-зображення магазину">
+            </div>
+        </section>
+
+        <section id="services" aria-labelledby="services-title">
+            <h2 id="services-title">Наші послуги</h2>
+            <div class="services">
+                <article class="card">
+                    <h3>💻 Збірка ПК під ключ</h3>
+                    <p>Підберемо комплектуючі під ваш бюджет і задачі, зберемо, протестуємо та налаштуємо комп’ютер.</p>
+                </article>
+                <article class="card">
+                    <h3>🛠️ Модернізація та апгрейд</h3>
+                    <p>Оновлення комплектуючих: відеокарти, процесори, SSD, оперативна пам’ять — для кращої продуктивності вашого ПК.</p>
+                </article>
+                <article class="card">
+                    <h3>🔧 Діагностика та ремонт</h3>
+                    <p>Професійна перевірка, виявлення несправностей, чистка та ремонт комп’ютерів будь-якої складності.
+Хочеш додати ще або оформити це в вигляді карток для сайту?</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Контакти</h2>
+            <form action="#" method="post">
+                <p class="form-note">Поля зі * є обов’язковими.</p>
+
+                <div class="form-row">
+                    <label for="name">Ім’я *</label>
+                    <!-- тут все ОК: поле обов’язкове -->
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-row">
+                    <label for="email">Email *</label>
+                    <!-- BUG #2: немає required, хоча поле позначене як обов’язкове -->
+                    <input type="email" id="email" name="email" placeholder="you@example.com">
+                </div>
+
+                <div class="form-row">
+                    <label for="message">Повідомлення</label>
+                    <textarea id="message" name="message"></textarea>
+                </div>
+
+                <button class="btn-primary" type="submit">Відправити</button>
+            </form>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        © 2025 Tech Shop. Усі права захищені.
+    </div>
+</footer>
+
+</body>
+</html>
